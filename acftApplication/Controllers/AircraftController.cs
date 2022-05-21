@@ -31,5 +31,18 @@ namespace acftApplication.Controllers
             await _dbContext.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
+        [HttpGet]
+        public async Task<IActionResult> UpdateAircraft(int acftId)
+        {
+            Aircraft acft = await _dbContext.Aircrafts.FindAsync(acftId);
+            return View(acft);
+        }
+        [HttpPost]
+        public async Task<IActionResult> UpdateAircraft(Aircraft acft)
+        {
+            _dbContext.Aircrafts.Update(acft);
+            await _dbContext.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
     }
 }

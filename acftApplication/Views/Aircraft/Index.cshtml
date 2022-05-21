@@ -37,8 +37,8 @@
                 @Html.DisplayFor(modelItem => item.Capacity)
             </td>
             <td>
-                <a asp-action="UpdateAircraft" asp-route-id="@item.Id" class="btn btn-primary">Edit</a> |
-                <form asp-action="DeleteAircraft" asp-route-id="@item.Id">
+                <a asp-action="UpdateAircraft" asp-route-arcftId="@item.Id" class="btn btn-primary">Edit</a> |
+                <form asp-action="DeleteAircraft" asp-route-acftId="@item.Id">
                     <button type="submit" class="btn btn-danger"></button>
                 </form>
                 <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
