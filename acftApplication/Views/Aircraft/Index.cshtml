@@ -39,9 +39,9 @@
             <td>
                 <a asp-action="UpdateAircraft" asp-route-arcftId="@item.Id" class="btn btn-primary">Edit</a> |
                 <form asp-action="DeleteAircraft" asp-route-acftId="@item.Id">
-                    <button type="submit" class="btn btn-danger"></button>
+                    <button type="submit" class="btn btn-danger">Delete</button>
                 </form>
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                @*<a asp-action="Details" asp-route-id="@item.Id">Details</a> |*@
 
             </td>
         </tr>
