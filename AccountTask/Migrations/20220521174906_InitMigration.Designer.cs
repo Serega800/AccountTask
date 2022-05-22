@@ -17,7 +17,7 @@ namespace AccountTask.Migrations
             modelBuilder
                 .HasAnnotation("ProductVersion", "5.0.17");
 
-            modelBuilder.Entity("acftApplication.Models.Aircraft", b =>
+            modelBuilder.Entity("acftApplication.Models.Account", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -34,7 +34,7 @@ namespace AccountTask.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Aircrafts");
+                    b.ToTable("Accounts");
                 });
 #pragma warning restore 612, 618
         }

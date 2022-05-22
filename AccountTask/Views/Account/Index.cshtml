@@ -7,7 +7,7 @@
 <h1>Index</h1>
 
 <p>
-    <a asp-action="AddAircraft" class="btn btn-success">Create New</a>
+    <a asp-action="AddAccount" class="btn btn-success">Create New</a>
 </p>
 <table class="table">
     <thead>
@@ -37,8 +37,8 @@
                 @Html.DisplayFor(modelItem => item.Capacity)
             </td>
             <td>
-                <a asp-action="UpdateAircraft" asp-route-aircraftId="@item.Id" class="btn btn-primary">Edit</a> |
-                <form asp-action="DeleteAircraft" asp-route-aircraftId="@item.Id">
+                <a asp-action="UpdateAccount" asp-route-AccountId="@item.Id" class="btn btn-primary">Edit</a> |
+                <form asp-action="DeleteAccount" asp-route-AccountId="@item.Id">
                     <button type="submit" class="btn btn-danger">Delete</button>
                 </form>
                 @*<a asp-action="Details" asp-route-id="@item.Id">Details</a> |*@

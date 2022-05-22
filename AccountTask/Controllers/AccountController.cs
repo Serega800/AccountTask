@@ -17,38 +17,38 @@ namespace AccountTask.Controllers
         }
         public async Task<IActionResult> Index()
         {
-            return View(await _dbContext.Aircrafts.ToListAsync());
+            return View(await _dbContext.Accounts.ToListAsync());
         }
         [HttpGet]
-        public IActionResult AddAircraft()
+        public IActionResult AddAccount()
         {
             return View();
         }
         [HttpPost]
-        public async Task<IActionResult> AddAircraft(Account aircraft)
+        public async Task<IActionResult> AddAccount(Account Account)
         {
-            await _dbContext.Aircrafts.AddAsync(aircraft);
+            await _dbContext.Accounts.AddAsync(Account);
             await _dbContext.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
         [HttpGet]
-        public async Task<IActionResult> UpdateAircraft(int aircraftId)
+        public async Task<IActionResult> UpdateAccount(int AccountId)
         {
-            Account acft = await _dbContext.Aircrafts.FindAsync(aircraftId);
+            Account acft = await _dbContext.Accounts.FindAsync(AccountId);
             return View(acft);
         }
         [HttpPost]
-        public async Task<IActionResult> UpdateAircraft(Account aircraft)
+        public async Task<IActionResult> UpdateAccount(Account Account)
         {
-            _dbContext.Aircrafts.Update(aircraft);
+            _dbContext.Accounts.Update(Account);
             await _dbContext.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
         [HttpPost]
-        public async Task<IActionResult> DeleteAircraft(int aircraftId)
+        public async Task<IActionResult> DeleteAccount(int AccountId)
         {
-            Account acft = await _dbContext.Aircrafts.FindAsync(aircraftId);
-            _dbContext.Aircrafts.Remove(acft);
+            Account acft = await _dbContext.Accounts.FindAsync(AccountId);
+            _dbContext.Accounts.Remove(acft);
             await _dbContext.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }

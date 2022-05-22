@@ -7,7 +7,7 @@ namespace AccountTask.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Aircrafts",
+                name: "Accounts",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
@@ -18,14 +18,14 @@ namespace AccountTask.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Aircrafts", x => x.Id);
+                    table.PrimaryKey("PK_Accounts", x => x.Id);
                 });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Aircrafts");
+                name: "Accounts");
         }
     }
 }
