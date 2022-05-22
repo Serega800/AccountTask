@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace AccountTask.Controllers
 {
-    public class AircraftController : Controller
+    public class AccountController : Controller
     {
         private readonly DataBaseContext _dbContext;
-        public AircraftController(DataBaseContext dbContext)
+        public AccountController(DataBaseContext dbContext)
         {
             _dbContext = dbContext;
         }
@@ -25,7 +25,7 @@ namespace AccountTask.Controllers
             return View();
         }
         [HttpPost]
-        public async Task<IActionResult> AddAircraft(Aircraft aircraft)
+        public async Task<IActionResult> AddAircraft(Account aircraft)
         {
             await _dbContext.Aircrafts.AddAsync(aircraft);
             await _dbContext.SaveChangesAsync();
@@ -34,11 +34,11 @@ namespace AccountTask.Controllers
         [HttpGet]
         public async Task<IActionResult> UpdateAircraft(int aircraftId)
         {
-            Aircraft acft = await _dbContext.Aircrafts.FindAsync(aircraftId);
+            Account acft = await _dbContext.Aircrafts.FindAsync(aircraftId);
             return View(acft);
         }
         [HttpPost]
-        public async Task<IActionResult> UpdateAircraft(Aircraft aircraft)
+        public async Task<IActionResult> UpdateAircraft(Account aircraft)
         {
             _dbContext.Aircrafts.Update(aircraft);
             await _dbContext.SaveChangesAsync();
@@ -47,7 +47,7 @@ namespace AccountTask.Controllers
         [HttpPost]
         public async Task<IActionResult> DeleteAircraft(int aircraftId)
         {
-            Aircraft acft = await _dbContext.Aircrafts.FindAsync(aircraftId);
+            Account acft = await _dbContext.Aircrafts.FindAsync(aircraftId);
             _dbContext.Aircrafts.Remove(acft);
             await _dbContext.SaveChangesAsync();
             return RedirectToAction(nameof(Index));

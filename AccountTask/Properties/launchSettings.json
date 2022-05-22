@@ -15,7 +15,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "acftApplication": {
+    "AccounTask": {
       "commandName": "Project",
       "dotnetRunMessages": "true",
       "launchBrowser": true,
