@@ -1,6 +1,6 @@
 using System;
 
-namespace acftApplication.Models
+namespace AccountTask.Models
 {
     public class ErrorViewModel
     {

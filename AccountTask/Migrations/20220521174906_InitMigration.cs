@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace acftApplication.Migrations
+namespace AccountTask.Migrations
 {
     public partial class InitMigration : Migration
     {

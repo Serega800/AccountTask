@@ -3,9 +3,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using acftApplication.Models;
+using AccountTask.Models;
 
-namespace acftApplication.Migrations
+namespace AccountTask.Migrations
 {
     [DbContext(typeof(DataBaseContext))]
     [Migration("20220521174906_InitMigration")]
