@@ -1,3 +1,4 @@
+using AccountTask.Data;
 using AccountTask.Models;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -23,6 +24,7 @@ namespace AccountTask
                 try
                 {
                     var context = services.GetRequiredService<DataBaseContext>();
+                    DbInitializer.Initialize(context);
                 }
                 catch(Exception exception)
                 {

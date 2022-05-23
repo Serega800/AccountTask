@@ -1,7 +1,7 @@
-﻿@model IEnumerable<AccountTask.Models.Account>
+﻿<!--@model IEnumerable<AccountTask.Models.Account>
 @{
     ViewData["Title"] = "Home Page";
-}
+}-->
 
 @*<div class="text-center">
         <h1 class="display-4">Welcome</h1>
@@ -9,7 +9,7 @@
     </div>*@
 
 
-<br />
+<!--<br />
 <div class="container row p-0 m-0">
     <div class="col-6">
         <h2 class="text-info">Список Лицевых Счетов</h2>
@@ -34,7 +34,7 @@
                     <th>Площадь, м <sup>2</sup></th>
                     <th>Дата открытия</th>
                     <th>Дата закрытия</th>
-                    <th>
+                    <th>-->
                                 @foreach (var obj in Model)
                                 {
                         <tr>
@@ -42,7 +42,7 @@
                                 @obj.Id
                             </td>
                             <td width="30%">
-                                @obj.FullName
+                                @obj.Capacity
                             </td>
                     <td width="30%">
                             @obj.Id
@@ -68,7 +68,7 @@
                         <form asp-action="DeleteAccount" asp-route-AccountId="@item.Id">
                             <button type="submit" class="btn btn-danger">Delete</button>
                         </form>*@
-                    </th>
+                    <!--</th>
                 </tr>
             </thead>
         </table>
@@ -77,4 +77,4 @@
 
 @section Scripts{
     <script src="~/js/bookList.js"></script>
-}
+}-->
