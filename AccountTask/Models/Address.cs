@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -11,9 +12,13 @@ namespace AccountTask.Models
     {
         public string Locality { get; set; }
         public string Street { get; set; }
-        public string Building { get; set; }
+        public int Building { get; set; }
         public string Case { get; set; }
-        public string ApartmentNumber { get; set; }        
+        public int ApartmentNumber { get; set; }
+        [Required] 
+        public double Area { get; set; }
+        [Required] 
+        public int ResidentsCount { get; set; }
         public string GetAddress()
         {
             var address = new StringBuilder();

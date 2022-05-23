@@ -15,13 +15,8 @@ namespace AccountTask.Models
         [Required]
         public Address PropertyAddress { get; set; }
         [Required]
-        public double Area { get; set; }
-        [Required]
-        public int ResidentsCount { get; set; }
-        [Required]
-        public DateTime OpeningDate { get; }
-        public DateTime ClosingDate { get; }
-    }
+        public DateTime OpeningDate { get; set; }
+        public DateTime ClosingDate { get; private set; }    }
     //public class Account
     //{
     //    public int Id { get; set; }
