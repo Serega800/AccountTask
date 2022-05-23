@@ -3,14 +3,16 @@ using System;
 using AccountTask.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace AccountTask.Migrations
 {
     [DbContext(typeof(DataBaseContext))]
-    partial class DataBaseContextModelSnapshot : ModelSnapshot
+    [Migration("20220523180117_SecondMigration")]
+    partial class SecondMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -24,6 +26,10 @@ namespace AccountTask.Migrations
 
                     b.Property<double>("Area")
                         .HasColumnType("REAL");
+
+                    b.Property<string>("Discriminator")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("FullName")
                         .IsRequired()
@@ -40,6 +46,8 @@ namespace AccountTask.Migrations
                     b.HasIndex("PropertyAddressId");
 
                     b.ToTable("Accounts");
+
+                    b.HasDiscriminator<string>("Discriminator").HasValue("Account");
                 });
 
             modelBuilder.Entity("AccountTask.Models.Address", b =>
@@ -61,7 +69,7 @@ namespace AccountTask.Migrations
                     b.Property<string>("Street")
                         .HasColumnType("TEXT");
 
-                    b.ToTable("Addresses");
+                    b.HasDiscriminator().HasValue("Address");
                 });
 
             modelBuilder.Entity("AccountTask.Models.Account", b =>
@@ -71,15 +79,6 @@ namespace AccountTask.Migrations
                         .HasForeignKey("PropertyAddressId");
 
                     b.Navigation("PropertyAddress");
-                });
-
-            modelBuilder.Entity("AccountTask.Models.Address", b =>
-                {
-                    b.HasOne("AccountTask.Models.Account", null)
-                        .WithOne()
-                        .HasForeignKey("AccountTask.Models.Address", "Id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

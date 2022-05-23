@@ -11,7 +11,7 @@ namespace AccountTask.Models
     public class Account2 : Address
     {    
         [Key]
-        public Guid Id { get; private set; }
+        public long Id { get; private set; }
         [Required]
         public string FullName { get; set; }
         [Required]

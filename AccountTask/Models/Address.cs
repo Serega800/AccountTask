@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace AccountTask.Models
 {
-    public class Address
+    public class Address : Account
     {
         public string Locality { get; set; }
         public string Street { get; set; }
