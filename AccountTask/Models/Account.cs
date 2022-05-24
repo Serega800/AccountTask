@@ -26,5 +26,9 @@ namespace AccountTask.Models
         public string Building { get; set; }
         [Display(Name = "Квартира")]
         public int ApartmentNumber { get; set; }
+        [Display(Name = "Площадь, м\xB2")]
+        public double Area { get; set; }
+        [Display(Name = "Количество проживающих")]
+        public int ResidentsNumber { get; set; }
     }
 }

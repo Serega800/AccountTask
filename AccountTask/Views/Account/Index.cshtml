@@ -30,6 +30,12 @@
             <th>
                 @Html.DisplayNameFor(model => model.ApartmentNumber)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Area)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ResidentsNumber)
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -53,6 +59,12 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.ApartmentNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Area)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ResidentsNumber)
             </td>
             <td>
                 <span class="btn-group">
