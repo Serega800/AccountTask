@@ -1,22 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace AccountTask.Models
-{    
+{
     public class Account
-    {        
+    {
         public int Id { get; set; }
 
         [Display(Name = "Номер Лицевого Счёта")]
-        public string AccountId         
+        public string AccountId
         {
-            get => Id.ToString().PadLeft(10, '0');                           
-        }        
+            get => Id.ToString().PadLeft(10, '0');
+        }
 
-        [Display(Name ="ФИО собственника")]
+        [Display(Name = "ФИО собственника")]
         public string FullName { get; set; }
         [Display(Name = "Населённый пункт")]
         public string Locality { get; set; }
@@ -30,5 +31,11 @@ namespace AccountTask.Models
         public double Area { get; set; }
         [Display(Name = "Количество проживающих")]
         public int ResidentsNumber { get; set; }
+
+        [NotMapped]
+        public string Address
+        {
+            get => $"г.{Locality}, ул.{Street}, дом{Building}, кв{ApartmentNumber}";
+        }
     }
 }
