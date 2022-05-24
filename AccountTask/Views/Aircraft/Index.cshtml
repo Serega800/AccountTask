@@ -39,6 +39,7 @@
             <td>
                 <span class="btn-group">
                     <a asp-action="UpdateAircraft" asp-route-aircraftId="@item.Id" class="btn btn-primary">Edit</a>
+                    <a asp-action="ShowDetailsOfAircraft" asp-route-aircraftId="@item.Id" class="btn btn-primary">Details</a>
                     <form asp-action="DeleteAircraft" asp-route-aircraftId="@item.Id">
                         <button type="submit" onclick="return confirm('Вы действительно хотите удалить запись?')" class="btn btn-danger">Delete</button>
                     </form>

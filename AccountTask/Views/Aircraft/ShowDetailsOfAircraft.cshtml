@@ -1,0 +1,47 @@
+﻿@model AccountTask.Models.Aircraft
+
+@{
+    ViewData["Title"] = "ShowDetailsOfAircraft";
+}
+
+<h1>ShowDetailsOfAircraft</h1>
+
+<div>
+    <h4>Aircraft</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Manufacturer)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Manufacturer)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Capacity)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Capacity)
+        </dd>
+    </dl>
+</div>
+<div>
+    <span class="btn-group">
+        <a asp-action="UpdateAircraft" asp-route-aircraftId="@Model.Id" class="btn btn-primary">Edit</a>
+
+        <form asp-action="DeleteAircraft" asp-route-aircraftId="@Model.Id">
+            <button type="submit" onclick="return confirm('Вы действительно хотите удалить запись?')" class="btn btn-danger">Delete</button>
+        </form>
+    </span>
+
+    <a asp-action="Index">Back to List</a>
+    @*<a asp-action="Index" class="btn btn-info">Back to List</a>*@
+
+    @*<a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+        <a asp-action="Index">Back to List</a>*@
+</div>
