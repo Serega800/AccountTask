@@ -54,7 +54,7 @@ namespace AccountTask
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Aircraft}/{action=Index}/{id?}");
+                    pattern: "{controller=Account}/{action=Index}/{id?}");
             });
         }
     }

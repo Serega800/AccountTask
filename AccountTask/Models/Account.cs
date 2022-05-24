@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace AccountTask.Models
 {
-    public class Aircraft
+    public class Account
     {
         public int Id { get; set; }
         public string Manufacturer { get; set; }

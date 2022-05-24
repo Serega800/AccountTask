@@ -1,13 +1,13 @@
-﻿@model AccountTask.Models.Aircraft
+﻿@model AccountTask.Models.Account
 
 @{
-    ViewData["Title"] = "ShowDetailsOfAircraft";
+    ViewData["Title"] = "ShowDetailsOfAccount";
 }
 
-<h1>ShowDetailsOfAircraft</h1>
+<h1>ShowDetailsOfAccount</h1>
 
 <div>
-    <h4>Aircraft</h4>
+    <h4>Account</h4>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
@@ -32,9 +32,9 @@
 </div>
 <div>
     <span class="btn-group">
-        <a asp-action="UpdateAircraft" asp-route-aircraftId="@Model.Id" class="btn btn-primary">Edit</a>
+        <a asp-action="UpdateAccount" asp-route-accountId="@Model.Id" class="btn btn-primary">Edit</a>
 
-        <form asp-action="DeleteAircraft" asp-route-aircraftId="@Model.Id">
+        <form asp-action="DeleteAccount" asp-route-accountId="@Model.Id">
             <button type="submit" onclick="return confirm('Вы действительно хотите удалить запись?')" class="btn btn-danger">Delete</button>
         </form>
     </span>
