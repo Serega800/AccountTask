@@ -4,7 +4,7 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>List of Aircrafts</h1>
 
 <p>
     <a asp-action="AddAircraft" class="btn btn-success">Create New</a>
@@ -37,12 +37,13 @@
                 @Html.DisplayFor(modelItem => item.Capacity)
             </td>
             <td>
-                <a asp-action="UpdateAircraft" asp-route-aircraftId="@item.Id" class="btn btn-primary">Edit</a> |
-                <form asp-action="DeleteAircraft" asp-route-aircraftId="@item.Id">
-                    <button type="submit" class="btn btn-danger">Delete</button>
-                </form>
-                @*<a asp-action="Details" asp-route-id="@item.Id">Details</a> |*@
-
+                <span class="btn-group">
+                    <a asp-action="UpdateAircraft" asp-route-aircraftId="@item.Id" class="btn btn-primary">Edit</a>
+                    <form asp-action="DeleteAircraft" asp-route-aircraftId="@item.Id">
+                        <button type="submit" onclick="return confirm('Вы действительно хотите удалить запись?')" class="btn btn-danger">Delete</button>
+                    </form>
+                </span>                    
+                    @*<a asp-action="Details" asp-route-id="@item.Id">Details</a> |*@
             </td>
         </tr>
 }
