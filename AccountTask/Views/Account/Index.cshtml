@@ -4,10 +4,10 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>List of Accounts</h1>
+<h1>Список Лицевых Счетов</h1>
 
 <p>
-    <a asp-action="AddAccount" class="btn btn-success">Create New</a>
+    <a asp-action="AddAccount" class="btn btn-success">Открыть новый Лицевой Счёт</a>
 </p>
 <table class="table">
     <thead>
@@ -38,12 +38,12 @@
                 </td>
                 <td>
                     <span class="btn-group">
-                        <a asp-action="UpdateAccount" asp-route-accountId="@item.Id" class="btn btn-primary">Edit</a>
-                        <a asp-action="ShowDetailsOfAccount" asp-route-accountId="@item.Id" class="btn btn-primary">Details</a>
+                        <a asp-action="UpdateAccount" asp-route-accountId="@item.Id" class="btn btn-primary">Редактировать Лицевой Счёт</a>
+                        <a asp-action="ShowDetailsOfAccount" asp-route-accountId="@item.Id" class="btn btn-primary">Детали Лицевого Счёта</a>
                     
                     </span>   
                     <form asp-action="DeleteAccount" asp-route-accountId="@item.Id">
-                        <button type="submit" onclick="return confirm('Вы действительно хотите удалить запись?')" class="btn btn-danger">Delete</button>
+                        <button type="submit" onclick="return confirm('Вы действительно хотите удалить запись?')" class="btn btn-danger">Удалить Лицевой Счёт</button>
                     </form>
                         @*<a asp-action="Details" asp-route-id="@item.Id">Details</a> |*@
                 </td>

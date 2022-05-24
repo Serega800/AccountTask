@@ -4,10 +4,10 @@
     ViewData["Title"] = "ShowDetailsOfAccount";
 }
 
-<h1>ShowDetailsOfAccount</h1>
+<h1>Детали Лицевого Счёта</h1>
 
 <div>
-    <h4>Account</h4>
+    @*<h4>Лицевой Счёт</h4>*@
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
@@ -32,14 +32,14 @@
 </div>
 <div>
     <span class="btn-group">
-        <a asp-action="UpdateAccount" asp-route-accountId="@Model.Id" class="btn btn-primary">Edit</a>
+        <a asp-action="UpdateAccount" asp-route-accountId="@Model.Id" class="btn btn-primary">Редактировать Лицевой Счёт</a>
 
         <form asp-action="DeleteAccount" asp-route-accountId="@Model.Id">
-            <button type="submit" onclick="return confirm('Вы действительно хотите удалить запись?')" class="btn btn-danger">Delete</button>
+            <button type="submit" onclick="return confirm('Вы действительно хотите удалить запись?')" class="btn btn-danger">Удалить Лицевой Счёт</button>
         </form>
     </span>
 
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">Обратно к списку Лицевых Счетов</a>
     @*<a asp-action="Index" class="btn btn-info">Back to List</a>*@
 
     @*<a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
