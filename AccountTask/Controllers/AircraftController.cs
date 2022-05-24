@@ -52,5 +52,11 @@ namespace AccountTask.Controllers
             await _dbContext.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
+        [HttpGet]
+        public async Task<IActionResult> ShowDetailsOfAircraft(int aircraftId)
+        {
+            Aircraft acft = await _dbContext.Aircrafts.FindAsync(aircraftId);
+            return View(acft);
+        }
     }
 }
