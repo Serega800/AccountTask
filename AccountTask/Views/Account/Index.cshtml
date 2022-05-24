@@ -13,6 +13,9 @@
     <thead>
         <tr>
             <th>
+                @Html.DisplayNameFor(model => model.AccountId)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.FullName)
             </th>
             <th>
@@ -26,28 +29,31 @@
     </thead>
     <tbody>
 @foreach (var item in Model) {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.FullName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Locality)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ApartmentNumber)
-                </td>
-                <td>
-                    <span class="btn-group">
-                        <a asp-action="UpdateAccount" asp-route-accountId="@item.Id" class="btn btn-primary">Редактировать Лицевой Счёт</a>
-                        <a asp-action="ShowDetailsOfAccount" asp-route-accountId="@item.Id" class="btn btn-primary">Детали Лицевого Счёта</a>
-                    
-                    </span>   
-                    <form asp-action="DeleteAccount" asp-route-accountId="@item.Id">
-                        <button type="submit" onclick="return confirm('Вы действительно хотите удалить запись?')" class="btn btn-danger">Удалить Лицевой Счёт</button>
-                    </form>
-                        @*<a asp-action="Details" asp-route-id="@item.Id">Details</a> |*@
-                </td>
-            </tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.AccountId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FullName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Locality)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ApartmentNumber)
+            </td>
+            <td>
+                <span class="btn-group">
+                    <a asp-action="UpdateAccount" asp-route-accountId="@item.Id" class="btn btn-primary">Редактировать Лицевой Счёт</a>
+                    <a asp-action="ShowDetailsOfAccount" asp-route-accountId="@item.Id" class="btn btn-primary">Детали Лицевого Счёта</a>
+
+                </span>
+                <form asp-action="DeleteAccount" asp-route-accountId="@item.Id">
+                    <button type="submit" onclick="return confirm('Вы действительно хотите удалить запись?')" class="btn btn-danger">Удалить Лицевой Счёт</button>
+                </form>
+                @*<a asp-action="Details" asp-route-id="@item.Id">Details</a> |*@
+            </td>
+        </tr>
         }
     </tbody>
 </table>
