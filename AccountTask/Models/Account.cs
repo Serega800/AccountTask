@@ -18,18 +18,27 @@ namespace AccountTask.Models
         }
 
         [Display(Name = "ФИО собственника")]
+        [Required(ErrorMessage = "Необходимо указать Фамилию Имя Отчество")]
         [StringLength(100, MinimumLength = 3, ErrorMessage = "Длина строки должна составлять минимум 3 символа, максимум 100 символов.")]
         public string FullName { get; set; }
         [Display(Name = "Город")]
+        [Required(ErrorMessage = "Необходимо указать город")]
         public string Locality { get; set; }
+
         [Display(Name = "Улица")]
+        [Required(ErrorMessage = "Необходимо указать улицу")]
         public string Street { get; set; }
         [Display(Name = "Дом")]
+        [Required(ErrorMessage = "Необходимо указать номер дома")]
         public string Building { get; set; }
         [Display(Name = "Номер квартиры")]
+        [Required(ErrorMessage = "Необходимо указать номер квартиры")]
         public int ApartmentNumber { get; set; }
         [Display(Name = "Площадь, м\xB2")]
-        public double Area { get; set; }
+        [Required(ErrorMessage = "Необходимо указать площадь, в м\xB2.")]
+        [RegularExpression(@"^[1-9]+(\.[0-9]{1,2})$", ErrorMessage = "Число от 1 до 1000 с максимум двумя знаками после запятой.")]
+
+        public string Area { get; set; }
         [Display(Name = "Количество проживающих")]
         public int ResidentsNumber { get; set; }
 
