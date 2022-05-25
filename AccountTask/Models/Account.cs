@@ -40,6 +40,7 @@ namespace AccountTask.Models
         [Display(Name = "Дата Закрытия")]
         [DisplayFormat(DataFormatString = "{0:dd.MM.yyyy}")]
         public DateTimeOffset? ClosingDate { get; set; }
+        public bool IsActive { get; set; }
 
         [NotMapped]
         [Display(Name = "Адрес")]
@@ -50,6 +51,7 @@ namespace AccountTask.Models
 
         public Account()
         {
+            IsActive = true;
             this.OpeningDate = DateTime.Now.Date;
         }
     }

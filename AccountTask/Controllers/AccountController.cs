@@ -48,10 +48,19 @@ namespace AccountTask.Controllers
         public async Task<IActionResult> DeleteAccount(int accountId)
         {
             Account account = await _dbContext.Accounts.FindAsync(accountId);
-            _dbContext.Accounts.Remove(account);
+            account.IsActive = false;
+            account.ClosingDate = DateTime.Now.Date;            
             await _dbContext.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
+        //[HttpPost]
+        //public async Task<IActionResult> DeleteAccount(int accountId)
+        //{
+        //    Account account = await _dbContext.Accounts.FindAsync(accountId);
+        //    _dbContext.Accounts.Remove(account);
+        //    await _dbContext.SaveChangesAsync();
+        //    return RedirectToAction(nameof(Index));
+        //}
         [HttpGet]
         public async Task<IActionResult> ShowDetailsOfAccount(int accountId)
         {
