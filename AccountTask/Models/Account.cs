@@ -35,7 +35,11 @@ namespace AccountTask.Models
 
         [Display(Name = "Дата Открытия")]
         [DisplayFormat(DataFormatString = "{0:dd.MM.yyyy}")]
-        public DateTimeOffset OpeningDate { get; init; }        
+        public DateTimeOffset OpeningDate { get; init; }
+        
+        [Display(Name = "Дата Закрытия")]
+        [DisplayFormat(DataFormatString = "{0:dd.MM.yyyy}")]
+        public DateTimeOffset? ClosingDate { get; set; }
 
         [NotMapped]
         [Display(Name = "Адрес")]
