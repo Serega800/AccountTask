@@ -9,7 +9,7 @@ namespace AccountTask.Models
 {
     public class Account
     {
-        public int Id { get; set; }
+        public int Id { get; init; }
 
         [Display(Name = "Номер Лицевого Счёта")]
         public string AccountId
@@ -34,10 +34,12 @@ namespace AccountTask.Models
         public int ResidentsNumber { get; set; }
 
         //[Display(Name = "Дата Открытия")]
-        //public DateTime OpeningDate 
+        //[Range(typeof(DateTime), "DateTime.Today", "3/4/2004",
+        //ErrorMessage = "Value for {0} must be between {1} and {2}")]
+        //public DateTimeOffset OpeningDate { get; init; }
         //{
-        //    get => OpeningDate.Date;
-        //    private set => value = DateTime.Today; 
+        //    get => OpeningDate;
+        //    private set => value = DateTime.Today.Date;
         //}
 
         [NotMapped]

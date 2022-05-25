@@ -67,13 +67,13 @@
     </dl>
 </div>
 <div>
-    <span class="btn-group">
+    @*<span class="btn-group">*@
         <a asp-action="UpdateAccount" asp-route-accountId="@Model.Id" class="btn btn-primary">Редактировать Лицевой Счёт</a>
 
         <form asp-action="DeleteAccount" asp-route-accountId="@Model.Id">
             <button type="submit" onclick="return confirm('Вы действительно хотите удалить запись?')" class="btn btn-danger">Удалить Лицевой Счёт</button>
         </form>
-    </span>
+    @*</span>*@
 
     <a asp-action="Index">Обратно к списку Лицевых Счетов</a>
     @*<a asp-action="Index" class="btn btn-info">Back to List</a>*@
