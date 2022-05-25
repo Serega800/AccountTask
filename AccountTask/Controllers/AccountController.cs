@@ -47,6 +47,7 @@ namespace AccountTask.Controllers
         [HttpPost]
         public async Task<IActionResult> CloseAccount(int accountId)
         {
+
             Account account = await _dbContext.Accounts.FindAsync(accountId);
             account.IsActive = 0;
             account.ClosingDate = DateTime.Now.Date;            

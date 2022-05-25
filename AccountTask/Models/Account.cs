@@ -11,7 +11,7 @@ namespace AccountTask.Models
     {
         public int Id { get; init; }
 
-        [Display(Name = "Номер Лицевого Счёта")]
+        [Display(Name = "ИД ЛС")]
         public string AccountId
         {
             get => Id.ToString().PadLeft(10, '0');
