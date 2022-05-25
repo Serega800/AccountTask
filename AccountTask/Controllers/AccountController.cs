@@ -45,7 +45,7 @@ namespace AccountTask.Controllers
             return RedirectToAction(nameof(Index));
         }
         [HttpPost]
-        public async Task<IActionResult> DeleteAccount(int accountId)
+        public async Task<IActionResult> CloseAccount(int accountId)
         {
             Account account = await _dbContext.Accounts.FindAsync(accountId);
             account.IsActive = 0;
