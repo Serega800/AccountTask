@@ -54,21 +54,24 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Address)
             </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OpeningDate)
+            </td>
             @*<td>
-                @Html.DisplayFor(modelItem => item.Street)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Building)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ApartmentNumber)
-            </td>*@
+            @Html.DisplayFor(modelItem => item.Street)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Building)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ApartmentNumber)
+        </td>*@
             @*<td>
-                @Html.DisplayFor(modelItem => item.Area)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ResidentsNumber)
-            </td>*@
+            @Html.DisplayFor(modelItem => item.Area)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ResidentsNumber)
+        </td>*@
             <td>
                 <span class="btn-group">
                     <a asp-action="UpdateAccount" asp-route-accountId="@item.Id" class="btn btn-primary">Редактировать Лицевой Счёт</a>
