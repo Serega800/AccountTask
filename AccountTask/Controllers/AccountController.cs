@@ -48,7 +48,7 @@ namespace AccountTask.Controllers
         public async Task<IActionResult> DeleteAccount(int accountId)
         {
             Account account = await _dbContext.Accounts.FindAsync(accountId);
-            account.IsActive = false;
+            account.IsActive = 0;
             account.ClosingDate = DateTime.Now.Date;            
             await _dbContext.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
