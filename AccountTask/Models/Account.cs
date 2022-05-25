@@ -18,7 +18,7 @@ namespace AccountTask.Models
         }
 
         [Display(Name = "ФИО собственника")]
-        [StringLength(100,MinimumLength =3,ErrorMessage ="Длина строки должна составлять минимум 3 символа, максимум 100 символов.")]
+        [StringLength(100, MinimumLength = 3, ErrorMessage = "Длина строки должна составлять минимум 3 символа, максимум 100 символов.")]
         public string FullName { get; set; }
         [Display(Name = "Город")]
         public string Locality { get; set; }
@@ -34,6 +34,7 @@ namespace AccountTask.Models
         public int ResidentsNumber { get; set; }
 
         [Display(Name = "Дата Открытия")]
+        [DisplayFormat(DataFormatString = "{0:dd.MM.yyyy}")]
         //[Range(typeof(DateTime), "DateTime.Today", "3/4/2004",
         //ErrorMessage = "Value for {0} must be between {1} and {2}")]
         public DateTimeOffset OpeningDate { get; init; }
