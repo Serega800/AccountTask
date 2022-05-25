@@ -33,12 +33,12 @@ namespace AccountTask.Models
         [Display(Name = "Количество проживающих")]
         public int ResidentsNumber { get; set; }
 
-        [Display(Name = "Дата Открытия")]
-        public DateTimeOffset OpeningDate 
-        {
-            get => OpeningDate.Date;
-            private set => value = DateTime.Today; 
-        }
+        //[Display(Name = "Дата Открытия")]
+        //public DateTime OpeningDate 
+        //{
+        //    get => OpeningDate.Date;
+        //    private set => value = DateTime.Today; 
+        //}
 
         [NotMapped]
         [Display(Name = "Адрес")]
