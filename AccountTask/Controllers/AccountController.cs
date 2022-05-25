@@ -49,6 +49,10 @@ namespace AccountTask.Controllers
         {
 
             Account account = await _dbContext.Accounts.FindAsync(accountId);
+            if(account.IsActive == 0)
+            {
+                return RedirectToAction(nameof(Index));
+            }
             account.IsActive = 0;
             account.ClosingDate = DateTime.Now.Date;            
             await _dbContext.SaveChangesAsync();
