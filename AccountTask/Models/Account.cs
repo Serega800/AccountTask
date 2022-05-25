@@ -33,10 +33,10 @@ namespace AccountTask.Models
         [Display(Name = "Количество проживающих")]
         public int ResidentsNumber { get; set; }
 
-        //[Display(Name = "Дата Открытия")]
+        [Display(Name = "Дата Открытия")]
         //[Range(typeof(DateTime), "DateTime.Today", "3/4/2004",
         //ErrorMessage = "Value for {0} must be between {1} and {2}")]
-        //public DateTimeOffset OpeningDate { get; init; }
+        public DateTimeOffset OpeningDate { get; init; }
         //{
         //    get => OpeningDate;
         //    private set => value = DateTime.Today.Date;
@@ -47,6 +47,11 @@ namespace AccountTask.Models
         public string Address
         {
             get => $"г.{Locality}, ул.{Street}, дом{Building}, кв{ApartmentNumber}";
+        }
+
+        public Account()
+        {
+            this.OpeningDate = DateTime.Now.Date;
         }
     }
 }
