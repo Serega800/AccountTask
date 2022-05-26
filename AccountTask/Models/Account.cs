@@ -33,6 +33,7 @@ namespace AccountTask.Models
         [Required(ErrorMessage = "Необходимо указать номер дома")]
         public string Building { get; set; }
         [Display(Name = "Номер квартиры")]
+        [Range(1, 10000, ErrorMessage = "Номер квартиры должен быть целым числом больше 0, но не превышать 10 000")]
         [Required(ErrorMessage = "Необходимо указать номер квартиры")]
         public int ApartmentNumber { get; set; }
         [Display(Name = "Площадь, м\xB2")]
