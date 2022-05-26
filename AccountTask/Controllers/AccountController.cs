@@ -74,7 +74,25 @@ namespace AccountTask.Controllers
         }
 
         #region APICalls
+        [HttpGet]
+        public async Task<IActionResult> GetAll()
+        {
+            return Json(new { data = await _dbContext.Accounts.ToListAsync() });
+        }
 
+        [HttpDelete]
+        public async Task<IActionResult> Close(int id)
+        {
+            var accountFromDB = await _dbContext.Accounts.FirstOrDefaultAsync(u => u.Id == id);
+            if (accountFromDB.IsActive == 0)
+            {
+                return Json(new { success = false, message = "Ошибка во время закрытия" });
+            }
+            accountFromDB.IsActive = 0;
+            accountFromDB.ClosingDate = DateTime.Now.Date;
+            await _dbContext.SaveChangesAsync();
+            return Json(new { success = true, message = "Закрытие ЛС завершено успешно" });
+        }
         #endregion
     }
 }
