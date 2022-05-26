@@ -72,5 +72,9 @@ namespace AccountTask.Controllers
             Account account = await _dbContext.Accounts.FindAsync(accountId);
             return View(account);
         }
+
+        #region APICalls
+
+        #endregion
     }
 }

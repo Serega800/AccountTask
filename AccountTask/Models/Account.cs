@@ -38,7 +38,7 @@ namespace AccountTask.Models
         public int ApartmentNumber { get; set; }
         [Display(Name = "Площадь, м\xB2")]
         [Required(ErrorMessage = "Необходимо указать площадь, в м\xB2.")]
-        [RegularExpression(@"^[1-9]+(\.[0-9]{1,2})$", ErrorMessage = "Число от 1 до 1000 с сотыми долями. Разделитель - точка.")]
+        [RegularExpression(@"^[0-9]{0,3}\.?[0-9]{0,2}$", ErrorMessage = "Число от 1 до 1000 с сотыми долями. Разделитель - точка.")]
 
         public string Area { get; set; }
         [Display(Name = "Количество проживающих")]
