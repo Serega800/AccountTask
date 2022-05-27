@@ -30,12 +30,14 @@ namespace AccountTask.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Building")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<DateTimeOffset?>("ClosingDate")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("FullName")
+                        .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("TEXT");
 
@@ -43,6 +45,7 @@ namespace AccountTask.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Locality")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<DateTimeOffset>("OpeningDate")
@@ -52,6 +55,7 @@ namespace AccountTask.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Street")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");

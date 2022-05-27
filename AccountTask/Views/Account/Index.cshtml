@@ -27,25 +27,6 @@
             <th>
                 @Html.DisplayNameFor(model => model.ClosingDate)
             </th>
-            @*<th>
-            @Html.DisplayNameFor(model => model.Locality)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Street)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Building)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ApartmentNumber)
-        </th>*@
-            @*<th>
-            @Html.DisplayNameFor(model => model.Area)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ResidentsNumber)
-        </th>*@
-            <th></th>
         </tr>
     </thead>
     <tbody class="table-bordered">
@@ -66,24 +47,8 @@
             <td>
                 @Html.DisplayFor(modelItem => item.ClosingDate)
             </td>
-            @*<td>
-            @Html.DisplayFor(modelItem => item.Street)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Building)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ApartmentNumber)
-        </td>*@
-            @*<td>
-            @Html.DisplayFor(modelItem => item.Area)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ResidentsNumber)
-        </td>*@
             <td>
                 <div class="form-inline p-4">
-                    @*<a asp-action="UpdateAccount" asp-route-accountId="@item.Id" class="btn btn-primary">Редактировать Лицевой Счёт</a>*@
                     <a asp-action="ShowDetailsOfAccount" asp-route-accountId="@item.Id" class="btn btn-outline-info btn-sm mx-2">Детали</a>
                                         
                     <form asp-action="CloseAccount" asp-route-accountId="@item.Id">
@@ -95,17 +60,3 @@
         }
     </tbody>
 </table>
-
-@*<div class="col-12 border p-2">
-    <table id="DT_load" class="table table-hover table-bordered" style="width:auto">
-        <tr>ИД ЛС</tr>
-        <tr>ФИО собственника</tr>
-        <tr>Адрес</tr>
-        <tr>Дата открытия</tr>
-        <tr>Дата закрытия</tr>
-    </table>
-</div>*@
-
-@*@section Scripts {
-<script src="~/js/accountList.js"></script>
-}*@
