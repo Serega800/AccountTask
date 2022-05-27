@@ -83,7 +83,7 @@ namespace AccountTask.Controllers
             return Json(new { data = await _dbContext.Accounts.ToListAsync() });
         }
 
-        [HttpDelete]
+        [HttpPost]
         public async Task<IActionResult> Close(int id)
         {
             var accountFromDB = await _dbContext.Accounts.FirstOrDefaultAsync(u => u.Id == id);
@@ -94,7 +94,7 @@ namespace AccountTask.Controllers
             accountFromDB.IsActive = 0;
             accountFromDB.ClosingDate = DateTime.Now.Date;
             await _dbContext.SaveChangesAsync();
-            return Json(new { success = true, message = "Закрытие ЛС завершено успешно" });
+            return Json(new { success = true, message = "Закрытие ЛС завершено успешно" });            
         }
         #endregion
     }
