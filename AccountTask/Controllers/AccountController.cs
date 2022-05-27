@@ -25,10 +25,12 @@ namespace AccountTask.Controllers
             return View();
         }
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> AddAccount(Account account)
         {
             await _dbContext.Accounts.AddAsync(account);
             await _dbContext.SaveChangesAsync();
+            TempData["success"] = "ЛС добавлен успешно";
             return RedirectToAction(nameof(Index));
         }
         [HttpGet]
@@ -56,6 +58,7 @@ namespace AccountTask.Controllers
             account.IsActive = 0;
             account.ClosingDate = DateTime.Now.Date;            
             await _dbContext.SaveChangesAsync();
+            TempData["success"] = "ЛС закрыт успешно"; 
             return RedirectToAction(nameof(Index));
         }
         //[HttpPost]

@@ -65,7 +65,7 @@ namespace AccountTask.Models
         public Account()
         {
             IsActive = 1;
-            this.OpeningDate = DateTime.Now.Date;
+            this.OpeningDate = DateTime.Now.Date;          
         }
     }
 }
