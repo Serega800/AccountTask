@@ -8,7 +8,7 @@ namespace AccountTask.Models
 {
     public class DataBaseContext : DbContext
     {
-        public DbSet<Aircraft> Aircrafts { get; set; }
+        public DbSet<Account> Accounts { get; set; }
         public DataBaseContext(DbContextOptions<DataBaseContext> options) : base(options)
         {
 

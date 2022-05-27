@@ -1,0 +1,62 @@
+﻿@model IEnumerable<AccountTask.Models.Account>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Список Лицевых Счетов</h1>
+
+<p>
+    <a asp-action="AddAccount" class="btn btn-success">Открыть новый Лицевой Счёт</a>
+</p>
+<table class="table-hover">
+    <thead class="table-bordered">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.AccountId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FullName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OpeningDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ClosingDate)
+            </th>
+        </tr>
+    </thead>
+    <tbody class="table-bordered">
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.AccountId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FullName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OpeningDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClosingDate)
+            </td>
+            <td>
+                <div class="form-inline p-4">
+                    <a asp-action="ShowDetailsOfAccount" asp-route-accountId="@item.Id" class="btn btn-outline-info btn-sm mx-2">Детали</a>
+                                        
+                    <form asp-action="CloseAccount" asp-route-accountId="@item.Id">
+                        <button type="submit" onclick="return confirm('Вы действительно хотите удалить запись?')" class="btn btn-outline-danger btn-sm">Закрыть</button>
+                    </form>
+                </div>                
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

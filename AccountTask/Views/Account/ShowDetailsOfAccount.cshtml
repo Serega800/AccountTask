@@ -1,0 +1,90 @@
+﻿@model AccountTask.Models.Account
+
+@{
+    ViewData["Title"] = "ShowDetailsOfAccount";
+}
+
+<h1>Детализация Лицевого Счёта</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.AccountId)
+        </dt>
+        <dd class="col-sm-9 form-control">
+            @Html.DisplayFor(model => model.AccountId)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.FullName)
+        </dt>
+        <dd class="col-sm-9 form-control">
+            @Html.DisplayFor(model => model.FullName)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.Locality)
+        </dt>
+        <dd class="col-sm-9 form-control">
+            @Html.DisplayFor(model => model.Locality)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.Street)
+        </dt>
+        <dd class="col-sm-9 form-control">
+            @Html.DisplayFor(model => model.Street)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.Building)
+        </dt>
+        <dd class="col-sm-9 form-control">
+            @Html.DisplayFor(model => model.Building)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.ApartmentNumber)
+        </dt>
+        <dd class="col-sm-9 form-control">
+            @Html.DisplayFor(model => model.ApartmentNumber)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.Area)
+        </dt>
+        <dd class="col-sm-9 form-control">
+            @Html.DisplayFor(model => model.Area)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.ResidentsNumber)
+        </dt>
+        <dd class="col-sm-9 form-control">
+            @Html.DisplayFor(model => model.ResidentsNumber)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.OpeningDate)
+        </dt>
+        <dd class="col-sm-9 form-control">
+            @Html.DisplayFor(model => model.OpeningDate)
+        </dd>
+
+        @if (Model.ClosingDate != null)
+        {
+            <dt class="col-sm-3">
+                @Html.DisplayNameFor(model => model.ClosingDate)
+            </dt>
+            <dd class="col-sm-9 form-control">
+                @Html.DisplayFor(model => model.ClosingDate)
+            </dd>
+        }
+    </dl>
+</div>
+<div>
+    @if (Model.IsActive == 1)
+    {
+        <div class="form-check-inline p-2">
+            <a asp-action="UpdateAccount" asp-route-accountId="@Model.Id" class="btn btn-outline-primary btn mx-2">Редактировать Лицевой Счёт</a>
+            <form asp-action="CloseAccount" asp-route-accountId="@Model.Id">
+                <button type="submit" onclick="return confirm('Вы действительно хотите удалить запись?')" class="btn btn-outline-danger mx-2">Удалить Лицевой Счёт</button>
+            </form>
+        </div>        
+    }
+
+    <a asp-action="Index">Обратно к списку Лицевых Счетов</a>
+</div>
